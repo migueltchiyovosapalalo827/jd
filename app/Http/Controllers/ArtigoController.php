@@ -73,8 +73,8 @@ class ArtigoController extends Controller
             return redirect()->back()->with('sweet-error',$th->getMessage());
         }
         DB::commit();
-        //$subscritors = subscritor::all();
-        //Notification::send($subscritors,new NewsLatters($artigo));
+        $subscritors = subscritor::all();
+        Notification::send($subscritors,new NewsLatters($artigo));
         return redirect()->back()->with('sweet-success','artigo criado com sucesso');
 
     }
