@@ -1,0 +1,349 @@
+*{
+    font-family: 'Segoe UI';
+}
+
+.cabecalho{
+    background-color: #692f8f;
+    margin-bottom: 0px;
+}
+
+.submenu{
+    background-color: #692f8f;
+    border: none;
+    transition-duration: 3s;
+}
+
+.submenu a{
+    color: #dddddd;
+}
+
+.submenu a:hover{
+    background-color: #692f8f;
+    color: #ffffff;
+}
+
+.btnslide{
+    border-color: #692f8f;
+    color: #692f8f;
+}
+
+.btnslide:hover{
+    background-color: #692f8f;
+    color: #ffffff;
+}
+
+.titulo-a{
+    width: 145px;
+    padding-bottom: 10px;
+    border-bottom:2px solid #7c3481;
+  }
+  .titulo-b{
+    width: 220px;
+    padding-bottom: 10px;
+    border-bottom:2px solid #7c3481;
+  }
+
+  .botao{
+    background-color: #692f8f;
+    color: #ffffff;
+  }
+
+  .botao a{
+      text-decoration: none;
+    color: #ffffff;
+  }
+
+  .botao:hover{
+    background-color: #522272 !important;
+    color: #ffffff !important;
+  }
+
+  /*Subscrever Newsletter*/
+  .newsletter {
+    padding: 80px 0;
+    background: #857f86
+}
+
+.newsletter .content {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2
+}
+
+.content-tuned {
+    font-size: 1rem;
+    margin-bottom: 34px !important;
+    color: #fff
+}
+
+.tit {
+    color: #fff;
+    margin-bottom: 6px
+}
+
+.formcontrol-email {
+    height: 50px;
+    border-color: #ffffff;
+    border-radius: 2px 0px 0px 2px
+}
+
+.formcontrol-email:focus {
+    box-shadow: none !important;
+    border: 2px solid #692f8f;
+    border-color: none
+}
+
+.btn-subscribe {
+    min-height: 50px;
+    border-radius: 0;
+    background: #692f8f;
+    color: #fff;
+    font-weight: 300
+}
+
+.btn-subscribe:hover {
+    background: #522272;
+    color: #fff
+}
+
+.formcontrol-email:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0rem rgba(0, 123, 255, .25) !important
+}
+
+.unsubscribe-link {
+    text-decoration: none !important;
+    font-size: 13px;
+    color: #fff
+}
+
+.unsubscribe-link:hover {
+    text-decoration: none !important;
+    color: #fff
+}
+  /*Fim Subscrever newsletter*/
+
+  /*Video Apresentação*/
+ 
+
+  .containervideo {
+    width: 100%;
+    height: 100%;
+}
+
+  /*Fim Video Apresentação*/
+.owl-next{
+    font-size: 20px !important;
+height: 30px;
+width: 30px;
+}
+
+.owl-next:hover{
+    
+background-color:#692f8f !important;
+}
+
+.owl-prev{
+    
+    font-size: 20px !important;
+height: 30px;
+width: 30px;
+}
+
+.owl-prev:hover{
+    
+    background-color:#692f8f !important;
+    }
+
+    .item{
+        padding: 5px;
+    }
+    .item a{
+        text-decoration: none;
+        color: rgb(85, 85, 85);
+    }
+
+    .item img{
+        border-radius: 3px;
+        object-fit: contain;
+        height: 14rem;
+        border: 1px solid #c9c9c9;
+        
+  max-width: 100%;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+    }
+    .item:hover img{
+        
+  -moz-transform: scale(1.03);
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
+    }
+
+    .item h4{
+        padding: 3px;
+        text-align: center;
+        padding-top: 6px;
+    }
+
+    .item:hover h4{
+        color: #692f8f;
+    }
+    .imgcardformacao{
+        height: 250px;
+        width: 250px;
+        object-fit: fill;
+    }
+
+    .img-formacao{
+        background-image: url("../img/bookcase-335849_1920.jpg");
+    }
+
+    
+    .img-formacao h2{
+        font-weight: 500;
+        font-size: 40pt;
+    }
+    .img-artigo{
+        background-image: url("../img/bookcase-335849_1920.jpg");
+    }
+
+    
+    .img-artigo h2{
+        font-weight: 500;
+        font-size: 40pt;
+    }
+
+    .textosobre{
+        overflow-y: auto;
+        max-height: 500px;
+    }
+
+    .titulo-texto{
+        background-color: rgb(226, 226, 226);
+        width: 100%;
+        margin: 0 auto; 
+    }
+
+    .texto-completo{
+        text-align: justify;
+    }
+
+    /*Search*/
+
+    .search-box{
+        width: fit-content;
+        height: fit-content;
+        position: relative;
+      }
+      .input-search{
+        height: 40px;
+        width: 40px;
+        border-style: none;
+        padding: 10px;
+        font-size: 18px;
+        letter-spacing: 2px;
+        outline: none;
+        border-radius: 25px;
+        transition: all .5s ease-in-out;
+        background-color: #79419e;
+        padding-right: 32px;
+        color:#fff;
+      }
+      .input-search::placeholder{
+        color:rgba(255,255,255,.5);
+        font-size: 18px;
+        letter-spacing: 2px;
+        font-weight: 100;
+      }
+      .btn-search{
+        width: 40px;
+        height: 40px;
+        border-style: none;
+        font-size: 20px;
+        font-weight: bold;
+        outline: none;
+        cursor: pointer;
+        border-radius: 40%;
+        position: absolute;
+        right: 0px;
+        color:#ffffff ;
+        background-color:transparent;
+        pointer-events: painted;  
+      }
+      .btn-search:focus ~ .input-search{
+        width: 300px;
+        border-radius: 0px;
+        background-color: transparent;
+        border-bottom:1px solid rgba(255,255,255,.5);
+        transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+      }
+      .input-search:focus{
+        width: 300px;
+        border-radius: 0px;
+        background-color: transparent;
+        border-bottom:1px solid rgba(255,255,255,.5);
+        transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+      }
+
+      .btn-search:hover{
+          color: #c9c9c9;
+      }
+    /*Fim Search*/
+    
+    .lista-artigos li{
+        padding-bottom: 5px;
+    }
+    .lista-artigos li a{
+        text-decoration: none;
+        color: #495057;
+    }
+    .lista-artigos li a:hover{
+        text-decoration: underline;
+    }
+
+
+/* Container needed to position the overlay. Adjust the width as needed */
+.card-newspaper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #c9c9c9;
+}
+
+/* Make the image to responsive */
+.images {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* The overlay effect - lays on top of the card-newspaper and over the image */
+.overlays {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  transition: .5s ease;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  margin-left: -24px;
+}
+
+/* When you mouse over the card-newspaper, fade in the overlay title */
+.card-newspaper:hover .overlays p{
+    color: #522272;
+    font-weight: 500;
+       
+      
+}
