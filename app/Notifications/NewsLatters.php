@@ -44,7 +44,7 @@ class NewsLatters extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)->subject($this->artigo)->
-        markdown('mail.newslatters',['url'=>url('/artigos/'.$this->artigo->id),'subcopy'=>$this->artigo->resumo]);
+        markdown('mail.newslatters',['url'=>url('/artigo/'.$this->artigo->id),'artigo'=>$this->artigo]);
     }
 
     /**
