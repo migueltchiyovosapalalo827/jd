@@ -133,7 +133,7 @@
                             icon: 'success',
                             title: jqXHR.responseJSON.message,
                         });
-
+                        tableUser.ajax.reload();
                     }).fail((error) => {
                         Toast.fire({
                             icon: 'error',

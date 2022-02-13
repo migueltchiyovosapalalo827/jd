@@ -177,9 +177,12 @@ class CandidatoController extends Controller
     public function formacao(Request $request)
     {
         # code...
-        if ($request->ajax()) {
+      if ($request->ajax()) {
             # code...
-            $formacoes = Formacao::all();
+          $candidato_id = Auth::user()->candidato->id;
+          $formacoes = Formacao::whereNotIn('id',function($query) use($candidato_id) {
+              $query->select('formacao_id')->from('formacaoscandidatos')->where('candidato_id',$candidato_id);
+            })->get();
             return DataTables::of($formacoes)->make(true);
         }
           return view('admin.candidatos.formacoes');
