@@ -14,6 +14,7 @@
           <div class="container">
               <h2 class="titulo-a">ARTIGOS</h2>
               <br>
+                   <div class="row">
                    @foreach ($artigos as $item)
                   <div class="col-md-4">
                       <div class="card mb-4 shadow-sm ">
@@ -34,16 +35,18 @@
                       </div>
                   </div>
                   @endforeach
-                  <nav aria-label="Contacts Page Navigation">
-                    {{$artigos->links()}}
-
-                </nav>
+                 
+                  </div>
+                    
+             <div class="pagination justify-content-center m-0">
+             {!!$artigos->links()!!}
+             </div>
               </div>
-
-
+           
+    
           </div>
-      </div>
+      
       <!--fim publicações-->
-    <br><br>
+   
     <!--Fim formação-->
     @endsection

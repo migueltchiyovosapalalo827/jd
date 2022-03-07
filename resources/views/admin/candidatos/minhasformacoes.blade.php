@@ -92,7 +92,7 @@
 
             {
                 "data": function(data) {
-                    console.log(data);
+                 
                     return `<span class="badge ${data.estado == null ? 'bg-warning' : (data.estado == 1 ? 'bg-success' : 'bg-danger')}">${data.estado == null ? "pendente" : (data.estado == 1 ? 'aceite' : 'rejeitado')}</span>`;
 
                 }

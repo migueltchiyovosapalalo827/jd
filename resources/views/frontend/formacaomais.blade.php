@@ -17,12 +17,13 @@
 
                     <div class="container">
                         <p style="font-weight: bold; font-size: 16pt;">{{$formacao->nome}}</p>
-                        <p>DATA:  {{$formacao->data}} | 17h00 - 19h00 | PLATAFORMA ZOOM
+                        <p>DATA:  {{$formacao->data}}| PLATAFORMA ZOOM
                             <br>
                             FORMADOR: {{$formacao->formador}}
                             <br>
                             CUSTO : AOA {{$formacao->custo}}</p>
-
+                               {!! $formacao->descricao !!}
+                               <br>
                             <p style="font-weight: 600; font-size: 16pt;">COORDENADAS BANCÁRIAS</p>
                             <p>BANCO MILLENNIUM ATLÂNTICO <br>
                             BENEFICIÁRIO: JM ADVOGADO <br>

@@ -59,7 +59,7 @@ class ArtigoController extends Controller
             if ($request->hasFile('foto')) {
                 # code...
                 $foto = '/storage/'.$request->file('foto')->storeAs('fotos',
-                $request->titulo.$request->file('foto')->getClientOriginalName(),'public');
+                $request->file('foto')->getClientOriginalName(),'public');
             }
 
             $artigo = Artigo::create(['titulo'=>$request->titulo,'autor'=>$request->autor,'resumo'=>$request->resumo
@@ -120,7 +120,7 @@ class ArtigoController extends Controller
                 # code...
                 Storage::delete($artigo->foto);
                 $foto = '/storage/'.$request->file('foto')->storeAs('fotos',
-                $request->titulo.$request->file('foto')->getClientOriginalName(),'public');
+                $request->file('foto')->getClientOriginalName(),'public');
             }
 
             $artigo->update(['titulo'=>$request->titulo,'autor'=>$request->autor,'resumo'=>$request->resumo

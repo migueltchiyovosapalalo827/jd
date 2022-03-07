@@ -146,13 +146,6 @@
 </div>
 @endsection
 @include ('admin.includes.editors')
-@section('script')
-@parent
-    <script>
-$(document).ready(function () {
-  bsCustomFileInput.init();
-});
-    </script>
-@endsection
+
 
 

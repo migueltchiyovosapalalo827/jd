@@ -160,7 +160,7 @@ class CandidatoController extends Controller
 
         try {
             //code...
-        $formacao->candidatos()->attach($candidato->id, ['estado' => 0]);
+        $formacao->candidatos()->attach($candidato->id);
         } catch (\Throwable $th) {
             //throw $th;
             return response(['success'=>false,
@@ -177,10 +177,10 @@ class CandidatoController extends Controller
     public function formacao(Request $request)
     {
         # code...
-      if ($request->ajax()) {
+        if ($request->ajax()) {
             # code...
           $candidato_id = Auth::user()->candidato->id;
-          $formacoes = Formacao::whereNotIn('id',function($query) use($candidato_id) {
+          $formacoes = Formacao::whereNotIn('id',function($query) use ($candidato_id) {
               $query->select('formacao_id')->from('formacaoscandidatos')->where('candidato_id',$candidato_id);
             })->get();
             return DataTables::of($formacoes)->make(true);

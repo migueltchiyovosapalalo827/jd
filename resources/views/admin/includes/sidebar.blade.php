@@ -2,7 +2,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link">
+    <a href="{{route('dashboard')}}" class="brand-link">
       <img src="{{asset('logo.png')}}" alt="jd Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">João Dono</span>
@@ -66,7 +66,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('artigos.index') }}" class="nav-link">
                       <i class="fa fa-archive nav-icon" aria-hidden="true"></i>
                       <p>Listar  artigos</p>
                     </a>

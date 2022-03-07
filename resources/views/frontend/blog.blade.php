@@ -26,6 +26,10 @@
                     @endforeach
 
                 </div>
+                    
+                    
+
+                
                 <div class="col-md-4 overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
                     <div class="blog-imagem-principal">
                         <div class="card w-100 p-4" style="border-radius: 1px;">

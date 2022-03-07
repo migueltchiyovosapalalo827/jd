@@ -16,6 +16,7 @@
       <link rel="stylesheet" href="{{asset('admin/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}">
       <!-- Toastr -->
       <link rel="stylesheet" href="{{asset('admin/plugins/toastr/toastr.min.css')}}">
-
+ <!-- summernote -->
+  <link rel="stylesheet" href="{{asset('plugins/summernote/summernote-bs4.css')}}">
     @yield('css')
 </head>

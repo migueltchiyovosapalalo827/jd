@@ -16,12 +16,10 @@
             </div>
 
             <p class="texto-completo pb-5">
-                {{$artigo->resumo}}
-                <br><br>
-               {{$artigo->conteudo}}
-                <br><br>
+              {!! $artigo->conteudo !!}
+                <br>
                 Autor: {{$artigo->autor}}
-                <br><br>
+                <br>
                 Data de Publicação: {{$artigo->data}}
             </p>
 

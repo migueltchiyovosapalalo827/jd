@@ -30,6 +30,17 @@
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="{{route('contacto')}}">Contactos</a>
                         </li>
+                        
+                 <!--- <div id="google_translate_element"> </div>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle textlang" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        português
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item lang" href="javascript:trocarIdioma('pt')">português</a>
+                      <a class="dropdown-item lang" href="javascript:trocarIdioma('en')">inglês</a>
+                    </div>
+                  </li>-->
 
                     </ul>
 
@@ -40,6 +51,8 @@
                         <input type="text" name="titulo" class="input-search" placeholder="pesquesar..." id="input-search">
 
                     </div>
+                    
+                 
                 </div>
             </div>
         </nav>

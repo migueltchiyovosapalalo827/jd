@@ -42,8 +42,8 @@
             </div>
           </div>
           <div class="col-12 col-sm-6">
-            <h3 class="my-3">{{ $blog->resumo }}</h3>
-            <p> {{ $blog->conteudo }}.</p>
+            <h3 class="my-3">{{ $blog->titulo }}</h3>
+            <p> {!! $blog->conteudo !!}.</p>
 
            <hr>
 

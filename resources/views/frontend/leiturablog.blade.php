@@ -19,11 +19,11 @@
             </div>
 
             <p class="texto-completo pb-5">
-                   {{$blog->resumo}}
+                {!! $blog->conteudo !!}
                 <br><br>
-                {{$blog->conteudo}}
-                <br><br>
-                Autor: {{$blog->autor}}
+                <strong> Autor</strong>: {{$blog->autor}}
+                 <br>
+                  <strong>data</strong>: {{$blog->created_at}}
             </p>
 
         </div>
@@ -49,7 +49,7 @@
                         </span>
 
                         <p class="be-comment-text">
-                            {{$comentario->texto}}
+                            {{strip_tags($comentario->texto)}}
                         </p>
                     </div>
                 </div>

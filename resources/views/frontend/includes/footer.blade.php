@@ -11,10 +11,19 @@
                                 <form action="{{ route('subscrever')}}" method="POST">
                                     @csrf
                             <div class="input-group">
-                                <input type="email" class="form-control formcontrol-email" name="email"
-                                    placeholder="Enter email to subscribe"> <span class="input-group-btn">
-                                         <button class="btn btn-subscribe" type="submit">Subscrever</button>
+                                <input type="email" class="form-control formcontrol-email @error('email') is-invalid @enderror" name="email"
+                                    placeholder="Enter email to subscribe" value="{{old('email')}}">           
+                               
+                                    <span class="input-group-btn">
+                                
+                                         <button class="btn btn-subscribe" type="submit">Subscrever</button></span>
+                                          @error('email')
+                                <div class="invalid-feedback">
+                                    <h6>{{$message}}</h6>
+                                </div>
+                                @enderror
                              </div>
+                             
                             </form>
                         </div>
                     </div>

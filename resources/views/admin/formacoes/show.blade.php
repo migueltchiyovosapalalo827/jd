@@ -47,9 +47,10 @@
                         <img class="img-fluid" src="{{$formacao->foto}}" alt="Photo">
                       </div>
                       <div class="col-sm-6">
+                          <h3> {{$formacao->nome}} </h3>
                           <span> Formador : {{$formacao->formador}}</span>
                       <p>
-                        {{$formacao->descricao}}
+                        {!! $formacao->descricao !!}
                       </p>
                       <span> data da formação : {{$formacao->data}}</span>
                       </div>

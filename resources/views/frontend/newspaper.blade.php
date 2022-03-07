@@ -34,11 +34,9 @@
 
                   </div>
             </div>
-
-                <nav aria-label="Contacts Page Navigation">
-                    {{$newspapers->links()}}
-
-                </nav>
+             <div class="pagination justify-content-center m-0">
+             {!!$newspapers->links()!!}
+             </div>
 
         </div>
         <!--Fim formação-->
