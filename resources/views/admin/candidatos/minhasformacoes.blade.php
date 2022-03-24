@@ -39,6 +39,7 @@
                                 <th>data</th>
                                 <th>custo</th>
                                 <th>estado</th>
+                                <th>material</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -72,7 +73,7 @@
         },
         columnDefs: [{
             orderable: false,
-            targets: [0,3]
+            targets: [0,4]
         }],
         columns: [{
                 'data': null
@@ -92,8 +93,23 @@
 
             {
                 "data": function(data) {
-                 
+
                     return `<span class="badge ${data.estado == null ? 'bg-warning' : (data.estado == 1 ? 'bg-success' : 'bg-danger')}">${data.estado == null ? "pendente" : (data.estado == 1 ? 'aceite' : 'rejeitado')}</span>`;
+
+                }
+            }
+            ,
+            {
+                "data": function(data)
+                {
+                     if (data.estado == 1) {
+                         return     `<td class="text-right py-0 align-middle">
+                            <div class="btn-group btn-group-sm">
+                           <a class="btn btn-primary" href="{{url('/materiais?formacao_id=${data.id}')}}"><i class="fas fa-list-ol m-r-5"></i> ver lista de materias</a>
+                            </div>
+                            </td>`;
+                     }
+                         return "";
 
                 }
             }

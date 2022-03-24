@@ -15,7 +15,9 @@
                                 aria-expanded="false">Publicações</a>
                             <ul class="dropdown-menu submenu" aria-labelledby="dropdown07">
                                 <li><a class="dropdown-item" href="{{route('artigo.todos')}}">Artigos</a></li>
-                                <li><a class="dropdown-item" href="{{route('newspaper')}}">Newspaper</a></li>
+                                <li><a class="dropdown-item" href="{{route('livros')}}">Livros</a></li>
+                                <li><a class="dropdown-item" href="{{route('legalalert')}}">Legal Alert</a></li>
+                                <li><a class="dropdown-item" href="{{route('jornais')}}">Jornais e Revistas </a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -30,7 +32,7 @@
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="{{route('contacto')}}">Contactos</a>
                         </li>
-                        
+
                  <!--- <div id="google_translate_element"> </div>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle textlang" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -51,8 +53,8 @@
                         <input type="text" name="titulo" class="input-search" placeholder="pesquesar..." id="input-search">
 
                     </div>
-                    
-                 
+
+
                 </div>
             </div>
         </nav>

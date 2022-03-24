@@ -16,4 +16,10 @@ class Formacao extends Model
         # code...
         return $this->belongsToMany(Candidato::class,'formacaoscandidatos')->withPivot('estado');
     }
+
+    public function materias()
+    {
+        # code...
+        return $this->hasMany(Material::class);
+    }
 }

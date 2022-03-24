@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Artigo;
 use App\Http\Requests\StoreArtigoRequest;
 use App\Http\Requests\UpdateArtigoRequest;
+use App\Models\Categoria;
 use App\Models\subscritor;
 use App\Notifications\NewsLatters;
 use Illuminate\Http\Request as HttpRequest;
@@ -41,7 +42,8 @@ class ArtigoController extends Controller
     public function create()
     {
         //
-          return view('admin.artigos.create');
+          $categorias = Categoria::all();
+          return view('admin.artigos.create',compact('categorias'));
     }
 
     /**
@@ -56,15 +58,20 @@ class ArtigoController extends Controller
         DB::beginTransaction();
         try {
             //code...
+
+                # code...
             if ($request->hasFile('foto')) {
                 # code...
                 $foto = '/storage/'.$request->file('foto')->storeAs('fotos',
                 $request->file('foto')->getClientOriginalName(),'public');
             }
 
-            $artigo = Artigo::create(['titulo'=>$request->titulo,'autor'=>$request->autor,'resumo'=>$request->resumo
+            $categoria = Categoria::findOrfail($request->categoria);
+
+            $artigo = $categoria->artigos()->create(['titulo'=>$request->titulo,'autor'=>$request->autor,'resumo'=>$request->resumo
             ,'conteudo'=>$request->conteudo,'foto'=>  (isset($foto) ) ? $foto :  'foto.jpg','data'=> now(),
             'tipo'=>$request->tipo]);
+
 
         } catch (\Throwable $th) {
             //throw $th;
@@ -73,8 +80,12 @@ class ArtigoController extends Controller
             return redirect()->back()->with('sweet-error',$th->getMessage());
         }
         DB::commit();
-        $subscritors = subscritor::all();
-        Notification::send($subscritors,new NewsLatters($artigo));
+        if($request->tipo === "mensal")
+        {
+            $subscritors = subscritor::all();
+            Notification::send($subscritors,new NewsLatters($artigo));
+        }
+
         return redirect()->back()->with('sweet-success','artigo criado com sucesso');
 
     }
@@ -100,7 +111,8 @@ class ArtigoController extends Controller
     public function edit(Artigo $artigo)
     {
         //
-        return view('admin.artigos.update',compact('artigo'));
+        $categorias = Categoria::all();
+        return view('admin.artigos.update',compact('artigo','categorias'));
     }
 
     /**
@@ -123,7 +135,7 @@ class ArtigoController extends Controller
                 $request->file('foto')->getClientOriginalName(),'public');
             }
 
-            $artigo->update(['titulo'=>$request->titulo,'autor'=>$request->autor,'resumo'=>$request->resumo
+            $artigo->update(['categoria_id'=>$request->categoria,'titulo'=>$request->titulo,'autor'=>$request->autor,'resumo'=>$request->resumo
             ,'conteudo'=>$request->conteudo,'foto'=>  (isset($foto) ) ? $foto :  $artigo->foto,'tipo'=>$request->tipo]);
 
         } catch (\Throwable $th) {

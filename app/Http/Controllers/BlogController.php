@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Http\Requests\StoreBlogRequest;
 use App\Http\Requests\UpdateBlogRequest;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -36,7 +37,8 @@ class BlogController extends Controller
     public function create()
     {
         //
-        return view('admin.blogs.create');
+        $categorias = Categoria::all();
+        return view('admin.blogs.create',compact('categorias'));
     }
 
     /**
@@ -56,8 +58,9 @@ class BlogController extends Controller
                 $foto = '/storage/'.$request->file('foto')->storeAs('fotos',
                 $request->titulo.$request->file('foto')->getClientOriginalName(),'public');
             }
+            $categoria = Categoria::findOrfail($request->categoria);
 
-            Blog::create(['titulo'=>$request->titulo,'autor'=>$request->autor,'resumo'=>$request->resumo
+            $categoria->blog()->create(['titulo'=>$request->titulo,'autor'=>$request->autor,'resumo'=>$request->resumo
             ,'conteudo'=>$request->conteudo,'foto'=>  (isset($foto) ) ? $foto :  'foto.jpg',
             'tipo'=>$request->tipo]);
 
@@ -80,7 +83,8 @@ class BlogController extends Controller
     public function show(Blog $blog)
     {
         //
-        return view('admin.blogs.show',compact('blog'));
+        $categorias = Categoria::all();
+        return view('admin.blogs.show',compact('blog','categorias'));
     }
 
     /**
@@ -115,7 +119,7 @@ class BlogController extends Controller
                 $request->titulo.$request->file('foto')->getClientOriginalName(),'public');
             }
 
-            $blog->update(['titulo'=>$request->titulo,'autor'=>$request->autor,'resumo'=>$request->resumo
+            $blog->update(['categoria_id'=>$request->categoria,'titulo'=>$request->titulo,'autor'=>$request->autor,'resumo'=>$request->resumo
             ,'conteudo'=>$request->conteudo,'foto'=>  (isset($foto) ) ? $foto :  $blog->foto, 'tipo'=>$request->tipo]);
 
         } catch (\Throwable $th) {

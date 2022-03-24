@@ -32,8 +32,26 @@
             <div class="card-body">
             <form action="<?= route('blogs.store') ?>" method="post" class="form-horizontal" enctype="multipart/form-data">
                            {{ csrf_field()}}
+                           <div class="form-group row">
+                            <label for="mostrarpreco" class="col-sm-2 col-form-label">Categoria </label>
+                              <div class="col-sm-8">
+                               <select class="form-control  select2bs4 @error('tipo') is-invalid @enderror" data-placeholder="seleciona  uma opção" style="width: 100%;" name="categoria" id="categoria">
+                                         <option value="">seleciona  uma categoria</option>
+
+                                         @foreach ($categorias as $categoria)
+                                         <option value="{{$categoria->id}}"    {{ old('categoria') == $categoria->id ? "selected": "" }}  >{{ $categoria->nome }}</option>
+                                         @endforeach
+
+                                   </select>
+                                   @error('categoria')
+                                        <div class="invalid-feedback">
+                                            <h6>{{$message}}</h6>
+                                        </div>
+                                        @enderror
+                              </div>
+                         </div>
                    <div class="form-group row">
-                        <label for="inputName" class="col-sm-2 col-form-label">titulo do conteudo </label>
+                        <label for="inputName" class="col-sm-2 col-form-label">titulo  </label>
                         <div class="col-sm-8">
                             <div class="input-group">
                                 <div class="input-group-prepend">

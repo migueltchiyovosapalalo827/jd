@@ -141,12 +141,12 @@
 
         <!--Noticias livros newsletter-->
         <div class="container">
-            <h2 class="titulo-a">NEWSPAPER</h2>
+            <h2 class="titulo-a">Legal Alert</h2>
 
             <div class="owl-carousel owl-theme">
                 @foreach ($newspapers as $item)
                 <div class="item">
-                    <a href="{{ route('newspaper.ler', ['newspaper'=> $item->id]) }}">
+                    <a href="{{ route('legalalert.ler', ['newspaper'=> $item->id]) }}">
                     <img src="{{$item->foto}}" alt="">
                     <h4>{{$item->titulo}}</h4>
                     </a>

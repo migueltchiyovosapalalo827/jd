@@ -17,4 +17,10 @@ class Blog extends Model
       return $this->hasMany(Comentario::class);
     }
 
+    public function Categoria()
+    {
+        # code...
+        return $this->belongsTo(Categoria::class);
+    }
+
 }

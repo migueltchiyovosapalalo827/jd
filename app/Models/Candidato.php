@@ -9,7 +9,7 @@ class Candidato extends Model
 {
     use HasFactory;
     public $timestamps = true;
-    protected $fillable = array('nome',	'email','profissao','empresa','telefone','pais','nivelacademico','user_id','bi');
+    protected $fillable = array('nome',	'email','profissao','telefone','pais','nivelacademico','user_id','ni');
 
     public function formacoes()
     {

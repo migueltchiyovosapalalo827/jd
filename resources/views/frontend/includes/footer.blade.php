@@ -1,4 +1,26 @@
- <!--Fim Video apresentação-->
+<!--parceiros-->
+        <div class="newsletter" style="background-color: #692f8f; padding: 30px 0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="content">
+                            <h2 class="tit">NOSSOS PARCEIROS</h2>
+                            <br>
+                            <ul class="nav justify-content-between">
+                                <li class="nav-item nav-item-parceiros"><a href="#" class="nav-link px-2 content-tuned">Alexander Santos Junior</a></li>
+                                <li class="nav-item nav-item-parceiros"><a href="#" class="nav-link px-2 content-tuned">Dertrudes Jorge Sambo</a></li>
+                                <li class="nav-item nav-item-parceiros"><a href="#" class="nav-link px-2 content-tuned">Alexander Santos Junior</a></li>
+                                <li class="nav-item nav-item-parceiros"><a href="#" class="nav-link px-2 content-tuned">Dertrudes Jorge Sambo</a></li>
+                                <li class="nav-item nav-item-parceiros"><a href="#" class="nav-link px-2 content-tuned">Alexander Santos Junior</a></li>
+                                <li class="nav-item nav-item-parceiros"><a href="#" class="nav-link px-2 content-tuned">Dertrudes Jorge Sambo</a></li>
+                              </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Fim  parceiros-->
         <!--Newsletter-->
         <div class="newsletter">
             <div class="container">
@@ -12,10 +34,10 @@
                                     @csrf
                             <div class="input-group">
                                 <input type="email" class="form-control formcontrol-email @error('email') is-invalid @enderror" name="email"
-                                    placeholder="Enter email to subscribe" value="{{old('email')}}">           
-                               
+                                    placeholder="Enter email to subscribe" value="{{old('email')}}">
+
                                     <span class="input-group-btn">
-                                
+
                                          <button class="btn btn-subscribe" type="submit">Subscrever</button></span>
                                           @error('email')
                                 <div class="invalid-feedback">
@@ -23,7 +45,7 @@
                                 </div>
                                 @enderror
                              </div>
-                             
+
                             </form>
                         </div>
                     </div>

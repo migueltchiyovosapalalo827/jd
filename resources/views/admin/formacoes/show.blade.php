@@ -57,7 +57,8 @@
                     </div>
                       <div class="text-center mt-5 mb-3">
                         <a href="{{ route('candidato', ['formacao'=>$formacao->id]) }}" class="btn btn-sm btn-primary">Ver Candidatos</a>
-                      </div>
+                        <a href="{{url('materiais/create/'.$formacao->id)}}" class="btn btn-sm btn-success">Adicionar material</a>
+                    </div>
                     </div>
 
                 </div>

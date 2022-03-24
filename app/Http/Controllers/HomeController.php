@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artigo;
+use App\Models\Artigocertifico;
 use App\Models\Blog;
 use App\Models\Formacao;
+use App\Models\jornai;
+use App\Models\Livro;
 use App\Models\Newspaper;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -80,8 +83,29 @@ public function todosArtigos()
 {
     # code...
         $artigos = Artigo::paginate(9);
-    return view('frontend.artigos',compact('artigos'));
+        $artigosceitifico = Artigocertifico::latest()->take(10)->get();
+    return view('frontend.artigos',compact('artigos','artigosceitifico'));
 
+}
+public function livros()
+{
+    # code...
+    $livros = Livro::paginate(6);
+    return view('frontend.livros',compact('livros'));
+}
+
+public function artigosCintefico()
+{
+    # code...
+    $artigosceitifico = Artigocertifico::paginate(15);
+    return view('frontend.artigoscientifico',compact('artigosceitifico'));
+}
+
+public function jornais()
+{
+    # code...
+    $jornais = jornai::paginate(10);
+    return view('frontend.jornais',compact('jornais'));
 }
 
 public function blogs()

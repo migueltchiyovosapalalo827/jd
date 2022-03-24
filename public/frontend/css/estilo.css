@@ -37,6 +37,17 @@
     padding-bottom: 10px;
     border-bottom:2px solid #7c3481;
   }
+  
+  .titulo-c{
+    width: 310px;
+    padding-bottom: 10px;
+    border-bottom:2px solid #7c3481;
+  }  
+  .titulo-d{
+      width: auto;
+      padding-bottom: 10px;
+      border-bottom:2px solid #7c3481;
+    }
   .titulo-b{
     width: 220px;
     padding-bottom: 10px;
@@ -346,4 +357,14 @@ width: 30px;
     font-weight: 500;
        
       
+}
+
+.listaartigos li{
+    color: #7e7e7e;
+    padding-bottom: 5px;
+}
+
+.nav-item-parceiros a{
+    margin-bottom: 2px !important;
+    padding-bottom: 2px !important;
 }

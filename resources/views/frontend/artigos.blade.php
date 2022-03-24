@@ -35,18 +35,36 @@
                       </div>
                   </div>
                   @endforeach
-                 
+
                   </div>
-                    
+
              <div class="pagination justify-content-center m-0">
              {!!$artigos->links()!!}
              </div>
               </div>
-           
-    
+
+
           </div>
-      
+
       <!--fim publicações-->
-   
-    <!--Fim formação-->
+      <div class="album py-4 ">
+        <div class="container">
+            <h2 >ARTIGOS PUBLICADOS EM PLATAFORMAS</h2>
+            <br>
+            <div class="col-md-12 listaartigos">
+                <ol>
+                    @forelse ($artigosceitifico as $item)
+                     <li> <a href="{{$item->url}}"  target="_blank" rel="noopener noreferrer">{{$item->titulo}}</a> in {{$item->editora}} , {{$item->Autores}} , {{$item->volume}} , {{$item->ano}} </li>
+                    @empty
+                        nenhum artigo publicado em outra plataforma
+                    @endforelse
+              </ol>
+            </div>
+            <div class="pagination justify-content-center m-0">
+                <a class="btn btn-sm btn-primary" href="{{route('artigoscientifico')}}" role="button"> ver mais </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
     @endsection

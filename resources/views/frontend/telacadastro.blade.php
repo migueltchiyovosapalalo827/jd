@@ -26,13 +26,13 @@
                     </div>
 
                     <div class="form-floating mb-3">
-                        <input type="text" name="bi" value="{{old('bi')}}" class="form-control rounded-4 @error('bi') is-invalid @enderror" id="floatingInput" placeholder="numero do bi">
-                        @error('bi')
+                        <input type="text" name="ni" value="{{old('ni')}}" class="form-control rounded-4 @error('ni') is-invalid @enderror" id="floatingInput" placeholder="Nº do documento de identificação">
+                        @error('ni')
                         <div class="invalid-feedback">
                             <h6>{{$message}}</h6>
                         </div>
                         @enderror
-                        <label for="floatingInput">BI</label>
+                        <label for="floatingInput">Nº do documento de identificação</label>
                       </div>
 
                       <div class="form-floating mb-3">
@@ -62,15 +62,7 @@
                         @enderror
                         <label for="floatingInput">Profissão</label>
                       </div>
-                      <div class="form-floating mb-3">
-                          <input type="text" name="empresa" value="{{old('empresa')}}" class="form-control rounded-4 @error('empresa') is-invalid @enderror" id="floatingInput" placeholder="Profissão">
-                          @error('empresa')
-                          <div class="invalid-feedback">
-                              <h6>{{$message}}</h6>
-                          </div>
-                          @enderror
-                          <label for="floatingInput">Empresa</label>
-                        </div>
+
                       <select class="form-control form-select form-select-lg mb-3"  name="nivelacademico" aria-label=".form-select-lg example">
                           <option  value="">Nivel Acadêmico</option>
                           <option value="Ensino de base">Ensino de base</option>

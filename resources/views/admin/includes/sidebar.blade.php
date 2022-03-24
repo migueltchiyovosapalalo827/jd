@@ -25,6 +25,30 @@
                    with font-awesome or any other icon font library -->
 
                @role('Admin')
+               <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-list-ul " aria-hidden="true"></i>
+                  <p>
+                    Categoria
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="{{ route('categoria.create') }}" class="nav-link">
+                        <i class="fa fa-plus-circle nav-icon" aria-hidden="true"></i>
+                        <p>Nova Categoria</p>
+                      </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('categoria.index') }}" class="nav-link">
+                          <i class="far fa-dot-circle nav-icon "></i>
+                          <p>Listar Categoria</p>
+                        </a>
+                      </li>
+                  </ul>
+              </li>
               <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fa fa-users" aria-hidden="true"></i>
@@ -51,22 +75,94 @@
               </li>
               <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
-
-                  <i class="nav-icon fa fa-podcast" aria-hidden="true"></i>
+                    <i class="nav-icon fa fa-podcast" aria-hidden="true"></i>
                   <p>
-                    Artigos
+                  Artigos
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="{{ route('artigos.create') }}" class="nav-link">
+                        <i  class="fa fa-plus-circle nav-icon" aria-hidden="true"></i>
+                        <p>Publicar novo artigo</p>
+                      </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('artigos.index') }}" class="nav-link">
+                            <i class="fa fa-archive nav-icon" aria-hidden="true"></i>
+                            <p>Listar  artigos</p>
+                        </a>
+                      </li>
+                    <li class="nav-item has-treeview">
+                      <a href="#" class="nav-link">
+                        <i class="fas fa-list-ol  nav-icon "></i>
+                        <p> PUBLICADOS EM PLATAFORMAS
+                          <i class="right fas fa-angle-left"></i>
+                        </p>
+                      </a>
+                      <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{route('artigoscienticos.create') }}" class="nav-link">
+                              <i  class="fa fa-plus-circle nav-icon" aria-hidden="true"></i>
+                              <p>Publicar novo artigo</p>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a href="{{route('artigoscienticos.index') }}" class="nav-link">
+                              <i class="fa fa-archive nav-icon" aria-hidden="true"></i>
+                              <p>Listar  artigos</p>
+                            </a>
+                          </li>
+
+                      </ul>
+                    </li>
+
+                  </ul>
+              </li>
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+
+                  <i class="nav-icon fa fa-book-open" aria-hidden="true"></i>
+                  <p>
+                    Livros
                     <i class="fas fa-angle-left right"></i>
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="{{route('artigos.create') }}" class="nav-link">
+                    <a href="{{route('livros.create') }}" class="nav-link">
+                      <i  class="fa fa-plus-circle nav-icon" aria-hidden="true"></i>
+                      <p>Publicar novo Livro</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{route('livros.index') }}" class="nav-link">
+                      <i class="fa fa-archive nav-icon" aria-hidden="true"></i>
+                      <p>Listar  Livros</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+
+                  <i class="nav-icon fas fa-newspaper" aria-hidden="true"></i>
+                  <p>
+                    Jornais e revista
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{route('jornais.create') }}" class="nav-link">
                       <i  class="fa fa-plus-circle nav-icon" aria-hidden="true"></i>
                       <p>Publicar novo artigo</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="{{route('artigos.index') }}" class="nav-link">
+                    <a href="{{route('jornais.index') }}" class="nav-link">
                       <i class="fa fa-archive nav-icon" aria-hidden="true"></i>
                       <p>Listar  artigos</p>
                     </a>
@@ -99,9 +195,9 @@
               </li>
               <li class="nav-item has-treeview">
                 <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-newspaper  "></i>
+                  <i class="nav-icon fas fa-file-pdf  "></i>
                   <p>
-                    NewsPaper
+                    Legal alert
                     <i class="fas fa-angle-left right"></i>
                   </p>
                 </a>
@@ -109,13 +205,13 @@
                     <li class="nav-item">
                         <a href="{{route('newspapers.create')}}" class="nav-link">
                           <i  class="fa fa-plus-circle nav-icon" aria-hidden="true"></i>
-                          <p>Postar</p>
+                          <p>Postar Legal alert</p>
                         </a>
                       </li>
                       <li class="nav-item">
                         <a href="{{route('newspapers.index')}}" class="nav-link">
                           <i class="fa fa-archive nav-icon" aria-hidden="true"></i>
-                          <p>Listar  NewsPaper</p>
+                          <p>Listar  Legal alert</p>
                         </a>
                       </li>
 

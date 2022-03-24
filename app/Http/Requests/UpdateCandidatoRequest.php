@@ -26,12 +26,11 @@ class UpdateCandidatoRequest extends FormRequest
         return [
             //
             'nome' => ['required','string','unique:candidatos,nome','max:255'],
-            'bi' => ['required','string','min:14'],
+            'ni' => ['required','string','min:14'],
             'email' => ['required','string'],
             'profissao'=>['required','string'],
             'telefone' => ['required'],
             'pais' => ['required'],
-            'empresa' => ['required'],
             'nivelacademico' => ['required'],
         ];
     }

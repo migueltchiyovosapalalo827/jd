@@ -25,7 +25,7 @@
     <div class="col-md-12 d-flex justify-content-center">
 
         <div class="d-grid gap-2 col-3 mx-auto">
-            <a href="{{ route('newspaper.download',  ['newspaper'=> $newspaper->id]) }}" class="btn botao" type="button">Baixar</a>
+            <a href="{{ route('legalalert.download',  ['newspaper'=> $newspaper->id]) }}" class="btn botao" type="button">Baixar</a>
 
         </div>
 
