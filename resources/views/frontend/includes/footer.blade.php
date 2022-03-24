@@ -1,27 +1,4 @@
-<!--parceiros-->
-        <div class="newsletter" style="background-color: #692f8f; padding: 30px 0">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="content">
-                            <h2 class="tit">NOSSOS PARCEIROS</h2>
-                            <br>
-                            <ul class="nav justify-content-between">
-                                <li class="nav-item nav-item-parceiros"><a href="#" class="nav-link px-2 content-tuned">Alexander Santos Junior</a></li>
-                                <li class="nav-item nav-item-parceiros"><a href="#" class="nav-link px-2 content-tuned">Dertrudes Jorge Sambo</a></li>
-                                <li class="nav-item nav-item-parceiros"><a href="#" class="nav-link px-2 content-tuned">Alexander Santos Junior</a></li>
-                                <li class="nav-item nav-item-parceiros"><a href="#" class="nav-link px-2 content-tuned">Dertrudes Jorge Sambo</a></li>
-                                <li class="nav-item nav-item-parceiros"><a href="#" class="nav-link px-2 content-tuned">Alexander Santos Junior</a></li>
-                                <li class="nav-item nav-item-parceiros"><a href="#" class="nav-link px-2 content-tuned">Dertrudes Jorge Sambo</a></li>
-                              </ul>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Fim  parceiros-->
-        <!--Newsletter-->
+  <!--Newsletter-->
         <div class="newsletter">
             <div class="container">
                 <div class="row">
