@@ -1,71 +1,45 @@
 @extends('frontend.layouts.default')
 @section('conteudo')
-        <!--Carrossel-->
+        <!--Carrossel
 
         <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
                     aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="{{asset('frontend/img/fundo2.jpg')}}" alt="" class="bd-placeholder-img" width="100%" height="100%">
-                    <div class="container">
-                        <div class="carousel-caption text-start">
-                            <h1>Example headline.</h1>
-                            <p>Some representative placeholder content for the first slide of the carousel.</p>
-
-                        </div>
-                    </div>
+                    <img src="{{asset('frontend/img/joadonocapa.jpeg')}}" alt="" style="object-fit: cover;" class="bd-placeholder-img slide-img"  width="100%" height="100%">
                 </div>
-                <div class="carousel-item">
-                    <img src="{{asset('frontend/img/imagem1.jpeg')}}" alt="" class="bd-placeholder-img" width="100%" height="100%">
-
-                    <div class="container">
-                        <div class="carousel-caption text-start">
-                            <h1>Example headline.</h1>
-                            <p>Some representative placeholder content for the first slide of the carousel.</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="{{asset('frontend/img/imagem2.jpeg')}}" alt="" class="bd-placeholder-img" width="100%" height="100%">
-
-                    <div class="container">
-                        <div class="carousel-caption text-start">
-                            <h1>Example headline.</h1>
-                            <p>Some representative placeholder content for the first slide of the carousel.</p>
-
-                        </div>
-                    </div>
-                </div>
+            
+                
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
-        <!--Fim Carrossel-->
-        <!--Apresentação-->
+        Fim Carrossel-->
+        <div class="imagcapa">
+            <img src="{{asset('frontend/img/imagem_de_capa.png')}}" alt="">
+        </div>
+         <!--Apresentação actualizada 19 de julho de 2022-->
         <div class="container">
             <div class="col-md-12">
                 <p>
                 <h2 style="font-weight: 500;">
-                    Apresentação
+                    Breve Introdução
                 </h2>
                 </p>
-                <div class="col-md-10 p-0">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                        of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                        but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                <div class="col-md-11 p-0 texto-apresentacao">
+                    <p>João Dono, natural de Cabo Verde e Residente em Angola, é Doutorando em Direito na NOVA School of Law desde 2020 e, também, Mestrando em Direito Forense e Arbitragem na mesma Faculdade (em fase de conclusão da tese). Licenciado em Direito (2003) pela Faculdade de Direito da Universidade Nova de Lisboa, Pós-Graduado em Direito Privado pela Faculdade de Direito da Universidade Católica Portuguesa, Pós-graduado em Corporate Finance pela Faculdade de Direito da Universidade de Lisboa. Frequenta na Universidade de Lisboa Pós-Graduação em Direito da Arbitragem e, também, Pós-Graduação em Corporate Governance. Com interesse e experiência em matéria fiscal, frequenta Pós-Graadução em Gestão Fiscal no ISCTE.</p>
+                    <p>Iniciou a sua carreira, em Lisboa, na sociedade de advogados Miranda & Associados, tendo posteriormente exercido a advocacia, em Cabo Verde, no escritório JD Advogados, representando investidores estrangeiros e muitas das empresas de maior dimensão em Cabo Verde. Foi Professor em várias Instituições, públicas e privadas, de ensino superior em Cabo Verde e Angola, tendo ocupado por vários anos cargos de Direcção em Angola. Tem várias obras publicadas na área do direito privado, nomeadamente Introdução ao Direito Angolano e Teoria Geral do Direito Civil e autor de vários artigos científicos. É advogado em Cabo Verde, Consultor, Mediador, Árbitro e Professor em Angola. É, ainda, Gestor da Academia Dona Leonor Carrinho.</p>
+                    <p>Professor convidado no Instituto Politécnico Direito e Democracia (Cabo Verde) e Coordenador Adjunto do Centro de Conciliação e Arbitragem – CCA Global (Cabo Verde). É, também, Professor Convidado na Faculdade de Direito da Universidade Katyavala Bwila (Benguela – Angola). Tem sido orador em diversas conferências, em Angola e Cabo Verde, abordando diversos temas do mundo jurídico, compliance e governance.</p>
+                    <p>Membro da Associação Angolana de Corporate Governance e Colaborador do Nova Compliance Lab (NOVA School of Law), sendo um dos formadores do Curso Compliance para Prevenção à Corrupção.
+                        </p>
+                
+                <div class="row">
+                    <div class="button botaocv"><a class="" href="{{ asset('CV_JOÃO_DONO_RESUMO_abril_2022.pdf') }}"><i class="fas fa-folder-minus"></i></a> CV Resumo</div>
+                    
+                    <div class="button botaocv"><a class="" href="{{ asset('curriculum_vita_joão_dono.pdf') }}"><i class="fas fa-folder-plus"></i></a> CV Completo</div>
+                </div>
+                <br><br>
                 </div>
             </div>
         </div>

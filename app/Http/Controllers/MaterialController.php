@@ -82,7 +82,12 @@ class MaterialController extends Controller
     public function show(Material $material)
     {
         //
-        return Storage::download($material->documento);
+        if (file_exists($material->documento)) {
+            return Storage::download($material->documento);
+           } else {
+             return redirect()->back()->with('sweet-error', "O arquivo solicitado n«ªo existe");
+           }
+        
     }
 
     /**
@@ -146,7 +151,7 @@ class MaterialController extends Controller
         if (!$found = $material->delete()) {
             # code...
             return response(['success'=>false,
-            'message'=>'nÃ£o foi possivel eliminar este material'],422);
+            'message'=>'n«ªo foi possivel eliminar este material'],422);
         }
         return response(['success'=>true,
         'data'=>$found,

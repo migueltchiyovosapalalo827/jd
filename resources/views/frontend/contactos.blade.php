@@ -10,8 +10,8 @@
                             <h1>Contactos</h1>
                         </div>
                         <div class="col-md-8 d-flex txt text-1">
-                            <p class="lead" style="font-size: 20px;">L: País, Cidade, Rua <br> T: +224 900 000 000
-                                <br> E: joaodono@gmail.com
+                            <p class="lead" style="font-size: 20px;">L: Angola/ Cabo Verde/ Portugal <br> T: +224 900 000 000
+                                <br> Email: joaodono@gmail.com / jd@joaodono.com
                             </p>
 
                         </div></div>
