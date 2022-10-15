@@ -35,7 +35,7 @@
     <link href="{{asset('frontend/css/footers.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('frontend/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/owl.theme.default.min.css')}}">
-
+    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/all.css')}}">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">

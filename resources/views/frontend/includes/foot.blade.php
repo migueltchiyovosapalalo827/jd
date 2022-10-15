@@ -13,6 +13,7 @@
 
 
 <script src="{{asset('frontend/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('frontend/js/all.js')}}"></script>
 <script src="{{asset('admin/plugins/sweetalert2/sweetalert2.min.js')}}"></script>
 <script src="{{asset('admin/plugins/toastr/toastr.min.js')}}"></script>
 <script>

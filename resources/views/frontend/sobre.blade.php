@@ -9,16 +9,22 @@
                 <p class="mbr-text testimonial-text mbr-fonts-style display-7"><h5 class="card-title" style="color: black; font-size: 35px;">João Dono</h5>
 					<br>
                     <div class="textosobre">
-					<p class="card-text" style="text-align: justify; font-size: 16px;">Licenciado em Direito desde 2003 pela Faculdade de Direito da Universidade Nova de Lisboa (NOVA School of Law), com 17 anos de experiência profissional, em Cabo Verde, Portugal e Angola em advocacia, consultoria e docência universitária. Pós-graduado em Direito Privado pela Faculdade de Direito da Universidade Católica de Lisboa.
-						Doutorando em Direito pela NOVA School of Law e Chief Compliance Officer, com curso de especialização em Compliance para a Prevenção da Corrupção pela NOVA School of Law.
-						Entre os diversos artigos científicos e as obras publicadas, destacam-se Introdução ao Direito Angolano (2013) e Teoria Geral do Direito Civil (2014), ambos com edição da Escolar Editora. Estes dois livros estão disponíveis nas melhores Universidades do Mundo, como: Harvard Law School Library; Yale University; Stanford University Libraries; University of California Berkeley Law Library.
+					<p class="card-text" style="text-align: justify; font-size: 16px;">
+					    João Dono, natural de Cabo Verde e Residente em Angola, é Doutorando em Direito na NOVA School of Law desde 2020 e, também, Mestrando em Direito Forense e Arbitragem na mesma Faculdade (em fase de conclusão da tese). Licenciado em Direito (2003) pela Faculdade de Direito da Universidade Nova de Lisboa, Pós-Graduado em Direito Privado pela Faculdade de Direito da Universidade Católica Portuguesa, Pós-graduado em Corporate Finance pela Faculdade de Direito da Universidade de Lisboa. Frequenta na Universidade de Lisboa Pós-Graduação em Direito da Arbitragem e, também, Pós-Graduação em Corporate Governance. Com interesse e experiência em matéria fiscal, frequenta Pós-Graadução em Gestão Fiscal no ISCTE.
 						</p>
 
-					<p class="card-text" style="text-align: justify; font-size: 16px;">Palestrante e Formador em diversas áreas jurídicas, em temas relacionados com Compliance e Corporate Governace e, bem assim, Gestão, Liderança, Motivação e Reprogramação Mental.</p>
+					<p class="card-text" style="text-align: justify; font-size: 16px;">
+					    Iniciou a sua carreira, em Lisboa, na sociedade de advogados Miranda & Associados, tendo posteriormente exercido a advocacia, em Cabo Verde, no escritório JD Advogados, representando investidores estrangeiros e muitas das empresas de maior dimensão em Cabo Verde. Foi Professor em várias Instituições, públicas e privadas, de ensino superior em Cabo Verde e Angola, tendo ocupado por vários anos cargos de Direcção em Angola. Tem várias obras publicadas na área do direito privado, nomeadamente Introdução ao Direito Angolano e Teoria Geral do Direito Civil e autor de vários artigos científicos. É advogado em Cabo Verde, Consultor, Mediador, Árbitro e Professor em Angola. É, ainda, Gestor da Academia Dona Leonor Carrinho.
+					  </p>
+					  
+					   	<p class="card-text" style="text-align: justify; font-size: 16px;">
+					   	  Professor convidado no Instituto Politécnico Direito e Democracia (Cabo Verde) e Coordenador Adjunto do Centro de Conciliação e Arbitragem – CCA Global (Cabo Verde). É, também, Professor Convidado na Faculdade de Direito da Universidade Katyavala Bwila (Benguela – Angola). Tem sido orador em diversas conferências, em Angola e Cabo Verde, abordando diversos temas do mundo jurídico, compliance e governance.
+					    </p>
+					    
+					    <p class="card-text" style="text-align: justify; font-size: 16px;">
+					   Membro da Associação Angolana de Corporate Governance e Colaborador do Nova Compliance Lab (NOVA School of Law), sendo um dos formadores do Curso Compliance para Prevenção à Corrupção.
+					    </p>
 
-                <p class="mbr-author-desc mbr-fonts-style display-7">
-                   OUTRAS OPÇÕES AQUI
-                </p>
             </div>
             </div>
 
