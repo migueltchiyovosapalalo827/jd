@@ -42,11 +42,13 @@
                 </div>
 
                 <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                    <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-linkedin"
+                      <li class="ms-3"><a class="text-muted" href="https://m.youtube.com/channel/UCjuCmsr8TcWvui79dFYPPVA"><i class="bi bi-youtube"
                                 style="font-size: 18pt; color: #692f8f;"></i></a></li>
-                    <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-facebook"
+                    <li class="ms-3"><a class="text-muted" href="https://www.linkedin.com/mwlite/in/jo%C3%A3o-dono-57944416a"><i class="bi bi-linkedin"
                                 style="font-size: 18pt; color: #692f8f;"></i></a></li>
-                    <li class="ms-3"><a class="text-muted" href="#"><i class="bi bi-envelope-fill"
+                    <li class="ms-3"><a class="text-muted" href="https://www.facebook.com/joao.dono"><i class="bi bi-facebook"
+                                style="font-size: 18pt; color: #692f8f;"></i></a></li>
+                    <li class="ms-3"><a class="text-muted" href="https://instagram.com/joaodonooficial?igshid=YmMyMTA2M2Y="><i class="bi bi-instagram"
                                 style="font-size: 18pt; color: #692f8f;"></i></a></li>
                 </ul>
             </footer>
