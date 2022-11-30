@@ -17,7 +17,7 @@
                     <div class="corpo-texto-bio fnt">
                         <p>
                             Iniciou a sua carreira, em Lisboa, na sociedade de advogados Miranda & Associados,
-                            tendo posteriormente exercício a advocacia, em Cabo Verde,
+                            tendo posteriormente exercido a advocacia, em Cabo Verde,
                             no escritório JD Advogados, representando investidores estrangeiros e muitas das empresas de
                             maior dimensão em Cabo Verde.
                         </p>
