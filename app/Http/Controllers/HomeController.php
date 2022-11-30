@@ -57,10 +57,8 @@ class HomeController extends Controller
     public function index()
     {
         # code..
-       $newspapers = Newspaper::latest()->get();
-       $artigosRecentes= Artigo::latest()->take(6)->get();
-       $artigosMaislidos =  Artigo::orderBy('visualizacao','desc')->take(3)->get();
-       return view('frontend.index',compact('artigosRecentes','artigosMaislidos','newspapers'));
+
+       return view('frontend.index');
     }
 
     public function verArtigo(Artigo $artigo)

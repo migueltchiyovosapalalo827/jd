@@ -4,9 +4,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="content">
-                            <h2 class="tit">SUBSCREVER A NEWSLETTER</h2>
-                            <P class="content-tuned">Assine nossa newsletter e fique por dentro das próximas
-                                atualizações</P>
+                            <h2 class="tit">SUBSCREVA A NOSSA NEWSLETTER</h2>
+                                <br/>
                                 <form action="{{ route('subscrever')}}" method="POST">
                                     @csrf
                             <div class="input-group">

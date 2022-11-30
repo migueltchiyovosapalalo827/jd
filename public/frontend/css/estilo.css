@@ -2,6 +2,17 @@
     font-family: 'Segoe UI';
 }
 
+@font-face {
+    font-family: Baskerville-r;
+    src: url(../fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf);
+  }
+
+  
+@font-face {
+    font-family: Baskerville-b;
+    src: url(../fonts/Libre_Baskerville/LibreBaskerville-Bold.ttf);
+  }
+
 .cabecalho{
     background-color: #692f8f;
     margin-bottom: 0px;
@@ -387,10 +398,41 @@ width: 30px;
     margin-left: 12px;
 }
 
+.slide img{
+    width: 100%;
+}
+
+.slider{
+    width: 100%;
+    background-image: url("../img/FUNDOJD.png");
+}
+
+.slider .row{
+    width: 100%;
+}
+
+.slider img{
+    padding: 50px 0px 0px 15%;
+    height: 800px;
+}
+
 .botaocv:hover{
     background-color: #522272e5;
 }
 
-.imagcapa img{
-    width: 100% !important;
+.titulo-bio{
+    padding: 70px 0px 0px 0px;
+    font-family: Baskerville-b;
+    font-size: 30pt;
+}
+
+.texto-bio{
+    padding: 50px 50px 50px 0px;
+}
+
+.corpo-texto-bio{
+    
+    font-family: Baskerville-r;
+    font-size: 16pt;
+    text-align: justify;
 }

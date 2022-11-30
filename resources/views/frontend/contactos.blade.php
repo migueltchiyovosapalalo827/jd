@@ -20,10 +20,10 @@
 
                     <div class="col-md-8 d-flex txt text-1">
 
-                        <h1>Vamos Conversar <br> um pouco?</h1>
+                        <h1>Entre em contacto <br> connosco!</h1>
 
                     </div>
-
+                    <br/>
 				<div class="col-lg-9">
 					<form class="row contact_form" action="{{route('email.Contacto')}}" method="post" id="contactForm" novalidate="novalidate">
 						@csrf
