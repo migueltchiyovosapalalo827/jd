@@ -137,7 +137,7 @@ class FormacaoController extends Controller
     public function destroy(Formacao $formacao)
     {
         //
-        Storage::delete($formacao->foto);
+       // Storage::delete($formacao->foto);
         if (!$found = $formacao->delete()) {
             # code...
             return response(['success'=>false,
