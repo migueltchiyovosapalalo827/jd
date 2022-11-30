@@ -26,7 +26,7 @@ class FormacaoController extends Controller
             $formacoes = Formacao::all();
             return DataTables::of($formacoes)->make(true);
         }
-          return view('admin.formacoes.index');
+        return view('admin.formacoes.index');
     }
 
     /**
@@ -54,20 +54,25 @@ class FormacaoController extends Controller
             //code...
             if ($request->hasFile('foto')) {
                 # code...
-                $foto = '/storage/'.$request->file('foto')->storeAs('fotos',
-                $request->titulo.$request->file('foto')->getClientOriginalName(),'public');
+                $foto = '/storage/' . $request->file('foto')->storeAs(
+                    'fotos',
+                    $request->titulo . $request->file('foto')->getClientOriginalName(),
+                    'public'
+                );
             }
 
-            Formacao::create(['nome'=>$request->nome,'formador'=>$request->formador,'data'=> date('Y-m-d',strtotime(str_replace('/','-',$request->data))),
-            'descricao'=> $request->descricao, 'custo'=>$request->custo,'foto' => $foto]);
+            Formacao::create([
+                'nome' => $request->nome, 'formador' => $request->formador, 'data' => date('Y-m-d', strtotime(str_replace('/', '-', $request->data))),
+                'descricao' => $request->descricao, 'custo' => $request->custo, 'foto' => $foto
+            ]);
         } catch (\Throwable $th) {
             //throw $th;
             Storage::delete($foto);
             DB::rollBack();
-            return redirect()->back()->with('sweet-error',$th->getMessage());
+            return redirect()->back()->with('sweet-error', $th->getMessage());
         }
         DB::commit();
-        return redirect()->back()->with('sweet-success','formação criada com sucesso');
+        return redirect()->back()->with('sweet-success', 'formação criada com sucesso');
     }
 
     /**
@@ -80,7 +85,7 @@ class FormacaoController extends Controller
     {
         //
         $formacao = Formacao::find($id);
-        return view('admin.formacoes.show',compact('formacao'));
+        return view('admin.formacoes.show', compact('formacao'));
     }
 
     /**
@@ -93,7 +98,7 @@ class FormacaoController extends Controller
     {
         //
         $formacao = Formacao::find($id);
-        return view('admin.formacoes.update',compact('formacao'));
+        return view('admin.formacoes.update', compact('formacao'));
     }
 
     /**
@@ -113,19 +118,24 @@ class FormacaoController extends Controller
             $formacao = Formacao::find($id);
             if ($request->hasFile('foto')) {
                 # code...
-                $foto = '/storage/'.$request->file('foto')->storeAs('fotos',
-                $request->titulo.$request->file('foto')->getClientOriginalName(),'public');
+                $foto = '/storage/' . $request->file('foto')->storeAs(
+                    'fotos',
+                    $request->titulo . $request->file('foto')->getClientOriginalName(),
+                    'public'
+                );
             }
-            $formacao->update(['nome'=>$request->nome,'formador'=>$request->formador,
-            'descricao'=> $request->descricao, 'custo'=>$request->custo, 'data' =>  date('Y-m-d',strtotime(str_replace('/','-',$request->data))),
-            'foto' => (isset($foto) ) ? $foto :  $formacao->foto]);
+            $formacao->update([
+                'nome' => $request->nome, 'formador' => $request->formador,
+                'descricao' => $request->descricao, 'custo' => $request->custo, 'data' =>  date('Y-m-d', strtotime(str_replace('/', '-', $request->data))),
+                'foto' => (isset($foto)) ? $foto :  $formacao->foto
+            ]);
         } catch (\Throwable $th) {
             //throw $th;
             DB::rollBack();
-            return redirect()->back()->with('sweet-error',$th->getMessage());
+            return redirect()->back()->with('sweet-error', $th->getMessage());
         }
         DB::commit();
-        return redirect()->back()->with('sweet-success','formação criada com sucesso');
+        return redirect()->back()->with('sweet-success', 'formação criada com sucesso');
     }
 
     /**
@@ -134,20 +144,24 @@ class FormacaoController extends Controller
      * @param  \App\Models\Formacao  $formacao
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Formacao $formacao)
+    public function destroy($id)
     {
         //
-       // Storage::delete($formacao->foto);
+        $formacao = Formacao::find($id);
+        Storage::delete($formacao->foto);
         if (!$found = $formacao->delete()) {
             # code...
-            return response(['success'=>false,
-            'message'=>'não foi possivel eliminar esta formacão'],422);
+            return response([
+                'success' => false,
+                'message' => 'não foi possivel eliminar esta formacão'
+            ], 422);
         }
-        return response(['success'=>true,
-        'data'=>$found,
-        'message'=>'formacão eliminda com sucesso',
+        return response([
+            'success' => true,
+            'data' => $found,
+            'message' => 'formacão eliminda com sucesso',
 
-       ],200);
+        ], 200);
     }
 
     public function aceitarCandidatura(Formacao $formacao, Candidato $candidato)
@@ -156,19 +170,22 @@ class FormacaoController extends Controller
 
         try {
             //code...
-        $formacao->candidatos()->updateExistingPivot($candidato->id, ['estado' => 1]);
+            $formacao->candidatos()->updateExistingPivot($candidato->id, ['estado' => 1]);
         } catch (\Throwable $th) {
             //throw $th;
 
-            return response(['success'=>false,
-            'message'=>'não foi possivel acitar candidatura esta formacão'],422);
+            return response([
+                'success' => false,
+                'message' => 'não foi possivel acitar candidatura esta formacão'
+            ], 422);
         }
 
-        return response(['success'=>true,
-        'data'=>$formacao->nome,
-        'message'=>'Canditura acieta com sucesso com sucesso',
+        return response([
+            'success' => true,
+            'data' => $formacao->nome,
+            'message' => 'Canditura acieta com sucesso com sucesso',
 
-       ],200);
+        ], 200);
     }
 
     public function rejeitarCandidatura(Formacao $formacao, Candidato $candidato)
@@ -177,31 +194,33 @@ class FormacaoController extends Controller
 
         try {
             //code...
-        $formacao->candidatos()->updateExistingPivot($candidato->id, ['estado' => 0]);
+            $formacao->candidatos()->updateExistingPivot($candidato->id, ['estado' => 0]);
         } catch (\Throwable $th) {
             //throw $th;
 
-            return response(['success'=>false,
-            'message'=>'não foi possivel rejeitar esta candidatura esta formacão'],422);
+            return response([
+                'success' => false,
+                'message' => 'não foi possivel rejeitar esta candidatura esta formacão'
+            ], 422);
         }
 
-        return response(['success'=>true,
-        'data'=>$formacao->nome,
-        'message'=>'Canditura rejeitada com sucesso com sucesso',
+        return response([
+            'success' => true,
+            'data' => $formacao->nome,
+            'message' => 'Canditura rejeitada com sucesso com sucesso',
 
-       ],200);
+        ], 200);
     }
 
     public function listarCandidatos(Formacao $formacao)
     {
         # code...paginate(15)
-      /*  $formacao = Formacao::find($request->formacao_id);
+        /*  $formacao = Formacao::find($request->formacao_id);
         if ($request->ajax()) {
             # code...
             return DataTables::of($formacao->candidatos)->make(true);
         }*/
-          $candidatos = $formacao->candidatos()->paginate(9);
-          return view('admin.formacoes.candidatos',compact('formacao','candidatos'));
+        $candidatos = $formacao->candidatos()->paginate(9);
+        return view('admin.formacoes.candidatos', compact('formacao', 'candidatos'));
     }
-
 }
