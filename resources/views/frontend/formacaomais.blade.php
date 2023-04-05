@@ -17,21 +17,21 @@
 
                     <div class="container">
                         <p style="font-weight: bold; font-size: 16pt;">{{$formacao->nome}}</p>
-                        <p>DATA:  {{$formacao->data}}| PLATAFORMA ZOOM
+                       <!-- <p>DATA:  {{$formacao->data}}| PLATAFORMA ZOOM-->
                             <br>
                             FORMADOR: {{$formacao->formador}}
                             <br>
-                            CUSTO : AOA {{$formacao->custo}}</p>
+                           <!-- CUSTO : AOA {{$formacao->custo}}</p>-->
                                {!! $formacao->descricao !!}
                                <br>
-                            <p style="font-weight: 600; font-size: 16pt;">COORDENADAS BANCÁRIAS</p>
+                         <!---   <p style="font-weight: 600; font-size: 16pt;">COORDENADAS BANCÁRIAS</p>
                             <p>BANCO MILLENNIUM ATLÂNTICO <br>
                             BENEFICIÁRIO: JM ADVOGADO <br>
                             N.º DA CONTA: 123456789 10 005 <br>
-                            IBAN AO06 0055 0000 0000 0000 0000 4</p>
+                            IBAN AO06 0055 0000 0000 0000 0000 4</p>-->
 
                             <p style="font-weight: 600; font-size: 16pt;">PREENCHA O FORMULÁRIO ABAIXO</p>
-                            <p>NOTA: Para a confirmação da sua inscrição, queira, por favor, enviar o comprovativo do pagamento  para o nosso WhatsApp: 939 581 062 ou  para geral@jmadvogado.com</p>
+                            <!--<p>NOTA: Para a confirmação da sua inscrição, queira, por favor, enviar o comprovativo do pagamento  para o nosso WhatsApp: 939 581 062 ou  para geral@jmadvogado.com</p>-->
                     </div>
                 </div>
             </div>

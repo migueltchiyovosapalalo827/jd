@@ -52,7 +52,7 @@
                 </ul>
             </footer>
 
-            <p class="text-center text-muted" style="color: #692f8f; font-size: 12pt;">&copy; LEMtech 2022-All rights
+            <p class="text-center text-muted" style="color: #692f8f; font-size: 12pt;">&copy; Lemtech {{now()->format('Y')}}-All rights
                 reserved.</p>
         </div>
         <!--fim Footer-->

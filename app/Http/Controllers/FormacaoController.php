@@ -23,7 +23,7 @@ class FormacaoController extends Controller
         //
         if ($request->ajax()) {
             # code...
-            $formacoes = Formacao::all();
+            $formacoes = Formacao::with("candidatos")->get();
             return DataTables::of($formacoes)->make(true);
         }
         return view('admin.formacoes.index');
@@ -67,7 +67,9 @@ class FormacaoController extends Controller
             ]);
         } catch (\Throwable $th) {
             //throw $th;
-            Storage::delete($foto);
+            if (isset($foto)) {
+                Storage::delete($foto);
+            }
             DB::rollBack();
             return redirect()->back()->with('sweet-error', $th->getMessage());
         }
@@ -214,12 +216,7 @@ class FormacaoController extends Controller
 
     public function listarCandidatos(Formacao $formacao)
     {
-        # code...paginate(15)
-        /*  $formacao = Formacao::find($request->formacao_id);
-        if ($request->ajax()) {
-            # code...
-            return DataTables::of($formacao->candidatos)->make(true);
-        }*/
+
         $candidatos = $formacao->candidatos()->paginate(9);
         return view('admin.formacoes.candidatos', compact('formacao', 'candidatos'));
     }

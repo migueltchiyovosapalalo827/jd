@@ -26,9 +26,9 @@
           <div class="col p-4 d-flex flex-column position-static">
             <strong class="d-inline-block mb-2" style="color: #692f8f;">Formação</strong>
             <h3 class="mb-0">{{$formacao->nome}}</h3>
-            <div class="mb-1 text-muted">Data: {{$formacao->data}}</div>
             <div class="mb-1 text-muted">Formador: {{$formacao->formador}}</div>
-            <p class="mb-auto">Custo: {{$formacao->custo}}.</p>
+           <!--  <div class="mb-1 text-muted">Data: {{$formacao->data}}</div>
+            <p class="mb-auto">Custo: {{$formacao->custo}}.</p>-->
             <a href="{{ route('formacao.vermais', ['formacao'=>$formacao->id]) }}" class="stretched-link">ver mais</a>
           </div>
 

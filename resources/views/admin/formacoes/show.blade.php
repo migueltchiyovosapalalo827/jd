@@ -52,7 +52,7 @@
                       <p>
                         {!! $formacao->descricao !!}
                       </p>
-                      <span> data da formação : {{$formacao->data}}</span>
+                      <span> Data da formação : {{$formacao->data}}</span>
                       </div>
                     </div>
                       <div class="text-center mt-5 mb-3">

@@ -30,7 +30,7 @@ class StoreFormacaoRequest extends FormRequest
             'descricao'=>['required','string'],
             'data' => ['required','date'],
             'custo' => ['required'],
-            'foto' => ['mimes:jpeg,bmp,png,gif,svg'],
+            'foto' => ['required','mimes:jpeg,bmp,png,gif,svg'],
         ];
     }
 }
