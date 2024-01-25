@@ -15,6 +15,7 @@
                     </div>
                 <form class="" action="{{route('candidatura.criar')}}" method="POST">
                     @csrf
+                    <input type="hidden" name="formacao" value="{{$formacao->id}}">
                     <div class="form-floating mb-3">
                       <input type="text" name="nome" value="{{old('nome')}}" class="form-control  rounded-4 @error('nome') is-invalid @enderror" id="floatingInput" placeholder="nome completo">
                       @error('nome')
