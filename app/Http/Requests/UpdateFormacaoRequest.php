@@ -28,6 +28,7 @@ class UpdateFormacaoRequest extends FormRequest
             'nome' => ['required','string','max:255'],
             'formador' => ['required','string'],
             'descricao'=>['required','string'],
+            'data' => ['nullable','date'],
             'foto' => ['mimes:jpeg,bmp,png,gif,svg'],
         ];
     }
