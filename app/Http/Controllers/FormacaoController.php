@@ -62,8 +62,8 @@ class FormacaoController extends Controller
             }
 
             Formacao::create([
-                'nome' => $request->nome, 'formador' => $request->formador, 'data' => date('Y-m-d', strtotime(str_replace('/', '-', $request->data))),
-                'descricao' => $request->descricao, 'custo' => $request->custo, 'foto' => $foto
+                'nome' => $request->nome, 'formador' => $request->formador, 'data' => $request->data ? date('Y-m-d', strtotime(str_replace('/', '-', $request->data))): null,
+                'descricao' => $request->descricao, 'custo' => $request->custo ?? null, 'foto' => $foto ?? null
             ]);
         } catch (\Throwable $th) {
             //throw $th;
@@ -128,7 +128,7 @@ class FormacaoController extends Controller
             }
             $formacao->update([
                 'nome' => $request->nome, 'formador' => $request->formador,
-                'descricao' => $request->descricao, 'custo' => $request->custo, 'data' =>  date('Y-m-d', strtotime(str_replace('/', '-', $request->data))),
+                'descricao' => $request->descricao, 'custo' => $request->custo ?? $formacao->custo,  'data' => $request->data ? date('Y-m-d', strtotime(str_replace('/', '-', $request->data))) : null,
                 'foto' => (isset($foto)) ? $foto :  $formacao->foto
             ]);
         } catch (\Throwable $th) {

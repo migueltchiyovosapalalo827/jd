@@ -28,9 +28,8 @@ class StoreFormacaoRequest extends FormRequest
             'nome' => ['required','string','unique:formacaos,nome','max:255'],
             'formador' => ['required','string'],
             'descricao'=>['required','string'],
-            'data' => ['required','date'],
-            'custo' => ['required'],
-            'foto' => ['required','mimes:jpeg,bmp,png,gif,svg'],
+            'data' => ['date'],
+            'foto' => ['mimes:jpeg,bmp,png,gif,svg'],
         ];
     }
 }

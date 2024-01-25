@@ -71,6 +71,13 @@ class CandidatoController extends Controller
                 $user->candidato()->create($request->except(['passoword']));
                 $user->assignRole($roles_list);
 
+                $formacao = $request->formacao;
+                if (isset($formacao)) {
+                    # code...
+                    $formacao = Formacao::find($formacao);
+                    $formacao->candidatos()->attach($user->candidato->id);
+                }
+
         } catch (\Exception $e) {
            DB::rollBack();
         return redirect()->back()->with('sweet-error', $e->getMessage());
@@ -78,7 +85,7 @@ class CandidatoController extends Controller
 
         DB::Commit();
         Auth::attempt($request->only('email', 'password'));
-        return redirect('/dashboard')->with('sweet-success', 'conta criada  com sucesso');
+        return redirect()->route('candidatos.meuscursos')->with('sweet-success', 'candidatura efectuada com sucesso');
     }
 
     /**
