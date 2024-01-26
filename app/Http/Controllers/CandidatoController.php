@@ -27,7 +27,7 @@ class CandidatoController extends Controller
         if ($request->ajax()) {
             # code...
             $candidatos = Candidato::all();
-             return DataTables::of($candidatos)->make(true);
+            return DataTables::of($candidatos)->make(true);
         }
         return view('admin.candidatos.index');
     }
@@ -56,31 +56,30 @@ class CandidatoController extends Controller
         DB::beginTransaction();
         try {
             $roles_list = [];
-            $funcoes = Role::where('name','formando')->get();
+            $funcoes = Role::where('name', 'formando')->get();
             foreach ($funcoes as $funco) {
                 # code...
-                array_push($roles_list,$funco->id);
+                array_push($roles_list, $funco->id);
             }
 
             $user = User::create([
                 'email'    => $request->email,
                 'name' => $request->nome,
-                'password' =>Hash::make($request->password)
-                ]);
+                'password' => Hash::make($request->password)
+            ]);
 
-                $user->candidato()->create($request->except(['passoword']));
-                $user->assignRole($roles_list);
+            $user->candidato()->create($request->except(['passoword']));
+            $user->assignRole($roles_list);
 
-                $formacao = $request->formacao;
-                if (isset($formacao)) {
-                    # code...
-                    $formacao = Formacao::find($formacao);
-                    $formacao->candidatos()->attach($user->candidato->id);
-                }
-
+            $formacao = $request->formacao;
+            if (isset($formacao)) {
+                # code...
+                $formacao = Formacao::find($formacao);
+                $formacao->candidatos()->attach($user->candidato->id);
+            }
         } catch (\Exception $e) {
-           DB::rollBack();
-        return redirect()->back()->with('sweet-error', $e->getMessage());
+            DB::rollBack();
+            return redirect()->back()->with('sweet-error', $e->getMessage());
         }
 
         DB::Commit();
@@ -122,19 +121,19 @@ class CandidatoController extends Controller
         //
         DB::beginTransaction();
         try {
-           /* $user = User::create([
+            /* $user = User::create([
                 'email'    => $request->email,
                 'name' => $request->nome,
                 'password' =>Hash::make($request->password)
                 ]);*/
 
-                $candidato->update($request->except(['passoword']));
+            $candidato->update($request->except(['passoword']));
 
-              //  $user->assignRole($request->roles_list);
+            //  $user->assignRole($request->roles_list);
 
         } catch (\Exception $e) {
-           DB::rollBack();
-        return redirect()->back()->with('sweet-error', $e->getMessage());
+            DB::rollBack();
+            return redirect()->back()->with('sweet-error', $e->getMessage());
         }
         DB::Commit();
         return redirect()->back()->with('sweet-success', 'conta criada  com sucesso');
@@ -151,14 +150,17 @@ class CandidatoController extends Controller
         //
         if (!$found = $candidato->delete()) {
             # code...
-            return response(['success'=>false,
-            'message'=>'não foi possivel eliminar este candidato'],422);
+            return response([
+                'success' => false,
+                'message' => 'não foi possivel eliminar este candidato'
+            ], 422);
         }
-        return response(['success'=>true,
-        'data'=>$found,
-        'message'=>'candidato eliminda com sucesso',
+        return response([
+            'success' => true,
+            'data' => $found,
+            'message' => 'candidato eliminda com sucesso',
 
-       ],200);
+        ], 200);
     }
 
     public function realizarCandidatura(Formacao $formacao, Candidato $candidato)
@@ -167,45 +169,56 @@ class CandidatoController extends Controller
 
         try {
             //code...
-        $formacao->candidatos()->attach($candidato->id);
+            $formacao->candidatos()->attach($candidato->id);
         } catch (\Throwable $th) {
             //throw $th;
-            return response(['success'=>false,
-            'message'=>'não foi possivel realizar candidatura para esta formacão'.$th->getMessage()],422);
+            return response([
+                'success' => false,
+                'message' => 'não foi possivel realizar candidatura para esta formacão' . $th->getMessage()
+            ], 422);
         }
 
-        return response(['success'=>true,
-        'data'=>$formacao->nome,
-        'message'=>'Canditura feita com sucesso com sucesso',
+        return response([
+            'success' => true,
+            'data' => $formacao->nome,
+            'message' => 'Canditura feita com sucesso com sucesso',
 
-       ],200);
+        ], 200);
     }
 
     public function formacao(Request $request)
     {
-        # code...
-        if ($request->ajax()) {
-            # code...
-          $candidato_id = Auth::user()->candidato->id;
-          $formacoes = Formacao::whereNotIn('id',function($query) use ($candidato_id) {
-              $query->select('formacao_id')->from('formacaoscandidatos')->where('candidato_id',$candidato_id);
-            })->get();
-            return DataTables::of($formacoes)->make(true);
+        if (!$request->ajax()) {
+            return view('admin.candidatos.formacoes');
         }
-          return view('admin.candidatos.formacoes');
+
+        $candidato_id = Auth::user()->candidato ? Auth::user()->candidato->id : null;
+
+        if (is_null($candidato_id)) {
+            return DataTables::of(Formacao::all())->make(true);
+        }
+
+        $formacoes = Formacao::whereNotIn('id', function ($query) use ($candidato_id) {
+            $query->select('formacao_id')
+                ->from('formacaoscandidatos')
+                ->where('candidato_id', $candidato_id);
+        })->get();
+
+        return DataTables::of($formacoes)->make(true);
     }
+
 
     public function meusCorsus(Request $request)
     {
         # code...
         if ($request->ajax()) {
             # code...
-            $formacoes  = Formacao::join('formacaoscandidatos','formacaos.id','=','formacaoscandidatos.formacao_id')
-                                 ->join('candidatos', 'candidatos.id','=','formacaoscandidatos.candidato_id')
-                                 ->where('candidatos.user_id',Auth::user()->id)->select('formacaos.*','formacaoscandidatos.estado as estado');
-          //  $formacoes  = Auth::user()->candidato->formacoes;
+            $formacoes  = Formacao::join('formacaoscandidatos', 'formacaos.id', '=', 'formacaoscandidatos.formacao_id')
+                ->join('candidatos', 'candidatos.id', '=', 'formacaoscandidatos.candidato_id')
+                ->where('candidatos.user_id', Auth::user()->id)->select('formacaos.*', 'formacaoscandidatos.estado as estado');
+            //  $formacoes  = Auth::user()->candidato->formacoes;
             return DataTables::of($formacoes)->make(true);
         }
-          return view('admin.candidatos.minhasformacoes');
+        return view('admin.candidatos.minhasformacoes');
     }
 }
