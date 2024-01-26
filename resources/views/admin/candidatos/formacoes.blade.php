@@ -94,7 +94,7 @@
                 "data": function(data) {
                     return `<td class="text-right py-0 align-middle">
                             <div class="btn-group btn-group-sm">
-                                <button class="btn btn-primary btn-delete" data-id="${data.id}" data-user="{{Auth::user()?->candidato?->id }}">Candidatar-se</button>
+                                <button class="btn btn-primary btn-delete" data-id="${data.id}" data-user="{{Auth::user()->candidato  ? Auth::user()->candidato->id : null }}">Candidatar-se</button>
                             </div>
                             </td>`
                 }
