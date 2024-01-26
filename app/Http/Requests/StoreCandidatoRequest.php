@@ -27,7 +27,7 @@ class StoreCandidatoRequest extends FormRequest
             //nome	email	profissao	empresa	telefone	pais	nivelacademico
             'nome' => ['required','string','unique:candidatos,nome','max:255'],
             'ni' => ['required','string','min:14'],
-            'email' => ['required','string','email'],
+            'email' => ['required','string','email','unique:users,email'],
             'profissao'=>['required','string'],
             'telefone' => ['required'],
             'pais' => ['required'],

@@ -26,7 +26,8 @@ class UpdateComentarioRequest extends FormRequest
         return [
             //
             'nome' => ['required','string','max:255'],
-            'email' => ['required','string'],
+            // criar com de validação de email deve ser unique excepto para o id do usuario que estada editar
+            'email' => ['required', 'string', 'email', 'unique:users,email,' . $this->route()->parameter('candidato')->user->id],
             'profissao'=>['required','string'],
             'telefone' => ['required'],
             'pais' => ['required'],
